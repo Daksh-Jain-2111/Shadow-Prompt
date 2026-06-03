@@ -1,0 +1,11 @@
+[package]
+name = "engine-detect-ner"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+regex = "1.10"
+
+engine-detect-regex = { path = "../engine-detect-regex" }
+engine-mask-substitute = { path = "../engine-mask-substitute" }
+
