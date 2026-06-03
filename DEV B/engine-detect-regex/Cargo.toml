@@ -1,0 +1,14 @@
+[package]
+name = "engine-mask-substitute"
+version = "0.1.0"
+edition = "2021"
+description = "Masking and substitution engine with in-memory session consistency"
+
+[dependencies]
+rand = "0.8"
+uuid = { version = "1", features = ["v4"] }
+regex = "1"
+zeroize = "1.7"
+
+[dev-dependencies]
+engine-detect-regex = { path = "../engine-detect-regex" }
