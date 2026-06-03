@@ -1,0 +1,32 @@
+ShadowPrompt — release checklist (human / store steps)
+=====================================================
+
+Rust + CI
+---------
+[ ] cargo test --workspace (green)
+[ ] Optional: cargo clippy --workspace -D warnings
+
+Android
+-------
+[ ] Install Android SDK + NDK; install cargo-ndk (`cargo install cargo-ndk`)
+[ ] Run: powershell -File scripts/cargo-ndk-android.ps1
+[ ] Open folder `android` in Android Studio, sync Gradle, build debug/release
+[ ] Test on physical device: mask, chooser, handoff, unmask, wipe, onboarding
+[ ] Play Console: upload AAB from android/app/build/outputs/bundle/release/, internal track
+
+iOS
+---
+[ ] On macOS: `brew install xcodegen` (or download), cd ios-app, `xcodegen generate`
+[ ] Open ShadowPrompt.xcodeproj, set DEVELOPMENT_TEAM, add Rust static lib + swift_bridge outputs per your pipeline
+[ ] Build for device; run mask / unmask / wipe flows
+[ ] TestFlight: archive, upload, add internal testers
+
+Spreadsheet
+-----------
+[ ] Update ShadowPrompt_Sprint.xlsx Daily Checklist — mark Dev B rows DONE with evidence links or notes
+
+Cannot be automated from this repo
+-----------------------------------
+[ ] CoreML + TFLite on-device NER accuracy report (needs Dev A model artifacts + integration)
+[ ] Crash-free >= 99.5% over 20 sessions (field testing)
+[ ] Non-technical user onboarding sign-off

@@ -1,0 +1,11 @@
+[workspace]
+members = [
+    "engine-session",
+    "engine-detect-regex",
+    "engine-detect-ner",
+    "engine-runtime",
+    "engine-substitute",
+    "engine-mask-substitute",
+    "shadowprompt-engine",
+]
+resolver = "2"
